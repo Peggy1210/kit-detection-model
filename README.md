@@ -29,7 +29,15 @@ There are two directories in this repository, `PCRD_model` and `AUNP_model`. The
 
 ### Process
 
+![](https://github.com/Peggy1210/iGEM-ML-Model/blob/main/mlmodels.png)
 
+We built our machine learning in approaches, single-step and two-step methods.
+
+In the Two-Step model, there are two sub-models, the preprocessing model and the result-recognizing model. The preprocessing model will determine whether the photo the user has just taken is valid, that is, the detection kit is in the middle of the photo and is not covered by any objects. Next, the result-recognizing model will tell the result based on the valid image.
+
+Combining the function of the Two-Step model, the single model will tell whether the image is valid and the result of diagnosis in just one step.
+
+The following describes the corresponding file and details of the training.
 
 #### Convert Image File Type
 
@@ -39,21 +47,20 @@ There are two directories in this repository, `PCRD_model` and `AUNP_model`. The
 
 #### Two-Step Model
 
-**First step**
+##### **First step**
 * Run `preprocess_mode.ipynb`.
 * The label used in this step was written in `auto_label.csv`
-* There are three models in this file, including linear regression, random forest, and convolution neural network.
+* This file has three models, including linear regression, random forest, and convolution neural network.
 * The best model will be saved in `preprocess_model.tflite` for later use in the app.
 
-**Second step**
+##### **Second step**
 * Run `result_model.ipynb`.
 * The label used in this step was written in `color_label.csv`
-* There are three models in this file, including linear regression, random forest, and convolution neural network.
+* This file has three models, including linear regression, random forest, and convolution neural network.
 * The best model will be saved in `result_model.tflite` for later use in the app.
-
 
 #### Single Step Model
 * Run `preprocess_model.ipynb`.
 * The label used in this step was written in `multi_label.csv`
-* There are three models in this file, including linear regression, random forest, and convolution neural network.
+* This file has three models, including linear regression, random forest, and convolution neural network.
 * The best model will be saved in `single_model.tflite` for later use in the app.
