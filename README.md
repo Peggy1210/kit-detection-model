@@ -1,4 +1,4 @@
-iGEM ML Model
+Detection Kit Result Classifier
 ===
 
 ## Introduction
